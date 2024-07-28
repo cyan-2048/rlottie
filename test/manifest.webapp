@@ -1,0 +1,29 @@
+{
+	"name": "rlottie test",
+	"short_name": "rlottie test",
+	"version": "1.6.2",
+	"description": "rlottie test",
+	"subtitle": "rlottie test",
+	"locales": {
+		"en-US": {
+			"name": "rlottie test",
+			"description": "rlottie test",
+			"subtitle": "rlottie test"
+		}
+	},
+	"launch_path": "/index.html",
+	"icons": {
+		"56": "/icon_56.png",
+		"112": "/icon_112.png"
+	},
+	"theme_color": "#900000",
+	"developer": {
+		"name": "Cyan",
+		"url": "https://github.com/cyan-2048"
+	},
+	"origin": "app://rlottie.test",
+	"type": "web",
+	"permissions": {},
+	"categories": ["social"],
+	"default_locale": "en-US"
+}

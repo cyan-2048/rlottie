@@ -1,3 +1,5 @@
+subdir('tg')
+
 source_file = files('rlottiewasm.cpp')
 
     rlottie_wasm_dep = declare_dependency(include_directories

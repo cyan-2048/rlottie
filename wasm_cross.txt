@@ -1,12 +1,14 @@
 [binaries]
-c = 'EMSDK:upstream/emscripten/emcc.py'
-cpp = 'EMSDK:upstream/emscripten/em++.py'
-ar = 'EMSDK:upstream/emscripten/emar.py'
+c = 'EMSDK:fastcomp/emscripten/emcc.py'
+cpp = 'EMSDK:fastcomp/emscripten/em++.py'
+ar = 'EMSDK:fastcomp/emscripten/emar.py'
 
 [properties]
-root = 'EMSDK:upstream/emscripten/system'
-cpp_args = ['--bind' , '-s' , 'WASM=1' , '-s' , 'ALLOW_MEMORY_GROWTH=1' , '-s' , 'FILESYSTEM=0' , '-O2']
-cpp_link_args = ['--bind' , '-s' , 'WASM=1' , '-s' , 'ALLOW_MEMORY_GROWTH=1' , '-s' , 'FILESYSTEM=0' , '-O2']
+root = 'EMSDK:fastcomp/emscripten/system'
+cpp_args = ['--bind' , '-s' , 'WASM=0', '-s', 'MODULARIZE=1'  , '-s' , 'ENVIRONMENT="web,worker"'  , '-s' , 'NO_DYNAMIC_EXECUTION=1' ,  '-s' , 'FILESYSTEM=0' , '-O3']
+cpp_link_args = ['--bind' , '-s' , 'WASM=0', '-s', 'MODULARIZE=1'  , '-s' , 'ENVIRONMENT="web,worker"'  , '-s' , 'NO_DYNAMIC_EXECUTION=1' ,  '-s' , 'FILESYSTEM=0' , '-O3']
+c_args = ['--bind' , '-s' , 'WASM=0', '-s', 'MODULARIZE=1'  , '-s' , 'ENVIRONMENT="web,worker"'  , '-s' , 'NO_DYNAMIC_EXECUTION=1' ,  '-s' , 'FILESYSTEM=0' , '-O3']
+c_link_args = ['--bind' , '-s' , 'WASM=0', '-s', 'MODULARIZE=1'  , '-s' , 'ENVIRONMENT="web,worker"'  , '-s' , 'NO_DYNAMIC_EXECUTION=1' ,  '-s' , 'FILESYSTEM=0' , '-O3']
 shared_lib_suffix = 'js'
 static_lib_suffix = 'js'
 shared_module_suffix = 'js'

@@ -1,12 +1,12 @@
 project('rlottie',
-        'cpp',
+        'cpp','c',
         default_options : ['cpp_std=c++14', 'optimization=s'],
         version : '0.2',
         license : 'MIT',
         meson_version : '>=0.49',
         )
 
-add_project_arguments('-DDEMO_DIR="@0@/example/resource/"'.format(meson.current_source_dir()), language : 'cpp')
+add_project_arguments('-DDEMO_DIR="@0@/example/resource/"'.format(meson.current_source_dir()), language : ['cpp','c'])
 
 inc = [include_directories('inc')]
 config_dir = include_directories('.')
