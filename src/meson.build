@@ -43,7 +43,7 @@ if (cc.get_id() == 'emscripten')
 
   executable('rlottie-wasm',
               [],
-              dependencies : [rlottie_dep, rlottie_wasm_dep, mtcute_wasm_dep],
+              dependencies : [rlottie_dep, rlottie_wasm_dep],
             )
 endif
 

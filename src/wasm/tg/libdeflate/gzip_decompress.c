@@ -141,11 +141,13 @@ libdeflate_gzip_decompress_ex(struct libdeflate_decompressor *d,
 	return LIBDEFLATE_SUCCESS;
 }
 
+WASM_EXPORT
 LIBDEFLATEAPI int32_t
 libdeflate_gzip_get_output_size(const void* in, size_t in_nbytes) {
 	return get_unaligned_le32((u8*)in + in_nbytes - 4);
 }
 
+WASM_EXPORT
 LIBDEFLATEAPI enum libdeflate_result
 libdeflate_gzip_decompress(struct libdeflate_decompressor *d,
 			   const void *in, size_t in_nbytes,

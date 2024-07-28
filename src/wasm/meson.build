@@ -1,4 +1,4 @@
-subdir('tg')
+
 
 source_file = files('rlottiewasm.cpp')
 

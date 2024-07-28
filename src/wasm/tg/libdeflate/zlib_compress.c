@@ -29,6 +29,7 @@
 #include "zlib_constants.h"
 #include "adler32.h"
 
+WASM_EXPORT
 LIBDEFLATEAPI size_t
 libdeflate_zlib_compress(struct libdeflate_compressor *c,
 			 const void *in, size_t in_nbytes,
@@ -74,6 +75,7 @@ libdeflate_zlib_compress(struct libdeflate_compressor *c,
 	return out_next - (u8 *)out;
 }
 
+WASM_EXPORT
 /*LIBDEFLATEAPI*/ static size_t
 libdeflate_zlib_compress_bound(struct libdeflate_compressor *c,
 			       size_t in_nbytes)
