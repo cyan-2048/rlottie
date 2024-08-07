@@ -1,5 +1,7 @@
 #include <emscripten/bind.h>
+#include <malloc.h>
 #include <stdlib.h>
+#include <unistd.h>
 
 #include <string>
 
@@ -173,6 +175,14 @@ private:
     std::unique_ptr<rlottie::Animation> mPlayer;
 };
 
+unsigned int getUsedMemory()
+{
+    struct mallinfo mi = mallinfo();
+
+    unsigned int dynamicTop = (unsigned int)sbrk(0);
+    return dynamicTop + mi.fordblks;
+}
+
 // Binding code
 EMSCRIPTEN_BINDINGS(rlottie_bindings)
 {
@@ -191,4 +201,6 @@ EMSCRIPTEN_BINDINGS(rlottie_bindings)
         .function("setScale", &RlottieWasm::setScale)
         .function("setRotation", &RlottieWasm::setRotation)
         .function("setOpacity", &RlottieWasm::setOpacity);
+
+    function("getUsedMemory", &getUsedMemory);
 }
